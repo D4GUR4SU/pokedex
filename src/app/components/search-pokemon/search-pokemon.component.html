@@ -1,0 +1,18 @@
+<div class="page-header">
+    <h1>Pokémons</h1>
+</div>
+<div class="alert alert-dismissible alert-warning" *ngIf="pokemon.length == 0">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Oops!</h4>
+    <p>no Pokémon found :(</p>
+</div>
+<div class="row">
+    <div class="col-md-3" *ngFor="let pokemon of pokemon">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a [routerLink]="['/pokemon', pokemon.id]"><img class="img-responsive" src="../../../assets/img/{{pokemon.image}}" alt=""></a>
+            </div>
+            <div class="panel-footer white-color text-center ">{{pokemon.name}}</div>
+        </div>
+    </div>
+</div>
